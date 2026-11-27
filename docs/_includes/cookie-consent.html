@@ -1,0 +1,25 @@
+<div id="rtc-cookie-banner" class="rtc-cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+  <p>
+    Usamos cookies de análise (Google Analytics) e publicidade (Google AdSense)
+    para melhorar sua experiência. Veja nossa
+    <a href="{{ '/privacidade/' | relative_url }}">Política de Privacidade</a>.
+  </p>
+  <div class="rtc-cookie-actions">
+    <button type="button" id="rtc-cookie-accept" class="rtc-cookie-btn rtc-cookie-btn--accept">Aceitar</button>
+    <button type="button" id="rtc-cookie-reject" class="rtc-cookie-btn rtc-cookie-btn--reject">Rejeitar</button>
+  </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'rtc-cookie-consent';
+    var banner = document.getElementById('rtc-cookie-banner');
+    if (!banner || localStorage.getItem(KEY)) return;
+    banner.hidden = false;
+    function choose(value) {
+      localStorage.setItem(KEY, value);
+      banner.hidden = true;
+    }
+    document.getElementById('rtc-cookie-accept').addEventListener('click', function () { choose('accepted'); });
+    document.getElementById('rtc-cookie-reject').addEventListener('click', function () { choose('rejected'); });
+  })();
+</script>

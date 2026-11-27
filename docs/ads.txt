@@ -1,0 +1,6 @@
+---
+permalink: /ads.txt
+sitemap: false
+layout: null
+---
+google.com, pub-1710447158146560, DIRECT, f08c47fec0942fa0
