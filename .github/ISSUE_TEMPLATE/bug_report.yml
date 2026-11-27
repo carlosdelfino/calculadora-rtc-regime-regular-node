@@ -8,8 +8,8 @@ body:
       value: |
         Obrigado por reportar um bug. Antes de continuar, verifique se ja existe
         uma [issue aberta sobre o assunto](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/issues?q=is%3Aissue).
-        **Nao reporte vulnerabilidades de seguranca por aqui** — contate
-        consultoria@carlosdelfino.eti.br diretamente.
+        **Nao reporte vulnerabilidades de seguranca por aqui** — siga o canal
+        privado descrito em [SECURITY.md](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/blob/main/SECURITY.md).
   - type: textarea
     id: descricao
     attributes:

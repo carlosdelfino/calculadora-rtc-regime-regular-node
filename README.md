@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Calculadora%20RTC%20—%20Regime%20Regular&fontSize=36&fontAlignY=35&animation=twinkling)
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Language: Portuguese](https://img.shields.io/badge/Language-Portuguese-brightgreen.svg)
 ![Status](https://img.shields.io/badge/Status-Ongoing-yellow)
 ![Node](https://img.shields.io/badge/Node.js-%3E%3D18-brightgreen)
@@ -85,6 +85,17 @@ Consulte [CONVENCIONAL.md](./CONVENCIONAL.md):
 - **Commits:** [Conventional Commits v1.0.0-beta.4](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/)
 - **Branches:** [Conventional Branch v1.1.0](https://conventionalbranch.org/pt-br/)
 
+## Documentos do projeto
+
+| Documento | Conteúdo |
+|---|---|
+| [GOVERNANCE.md](./GOVERNANCE.md) | Papéis, versionamento SemVer e processo decisório |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | Guia de contribuição e boas práticas de GitHub Issues |
+| [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) | Código de Conduta (Contributor Covenant 2.1) |
+| [SECURITY.md](./SECURITY.md) | Política de segurança e canal privado de reporte |
+| [CHANGELOG.md](./CHANGELOG.md) | Histórico de versões (Keep a Changelog) |
+| [LICENSE](./LICENSE) | Licença MIT |
+
 ## Fluxo de trabalho Git
 
 1. Abra uma issue descrevendo o que será implementado e o problema relacionado;
@@ -105,5 +116,6 @@ WhatsApp: +55 (85) 98520-5490
 | 2026-11-27 | 0.1.0 | Inicialização do projeto e convenções Git |
 | 2026-11-27 | 0.1.1 | Adicionada seção sobre a Reforma Tributária do Consumo com legislação de referência |
 | 2026-11-27 | 0.1.2 | Documentada origem como port Node.js do projeto Java da Receita Federal |
+| 2026-11-27 | 0.1.3 | Adicionados GOVERNANCE, CHANGELOG, LICENSE (MIT), Código de Conduta e Política de Segurança |
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&animation=twinkling)

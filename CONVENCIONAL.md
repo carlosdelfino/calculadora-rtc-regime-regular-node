@@ -9,7 +9,7 @@ tags:
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Conven%C3%A7%C3%B5es%20Git&fontSize=36&fontAlignY=35&animation=twinkling)
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=RapportTecnologia.calculadora-rtc-regime-regular-node_convencional)
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Language: Portuguese](https://img.shields.io/badge/Language-Portuguese-brightgreen.svg)
 ![Status](https://img.shields.io/badge/Status-Ongoing-yellow)
 [![GitHub Issues](https://img.shields.io/github/issues/RapportTecnologia/AgenticSpace)](https://github.com/RapportTecnologia/AgenticSpace/issues)

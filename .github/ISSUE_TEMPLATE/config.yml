@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Relato de Vulnerabilidade de Seguranca
-    url: mailto:consultoria@carlosdelfino.eti.br
-    about: NAO abra issue publica para vulnerabilidades. Contate o mantenedor diretamente.
+    url: https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/blob/main/SECURITY.md
+    about: NAO abra issue publica para vulnerabilidades. Veja o canal privado na Politica de Seguranca.
   - name: Documentacao do Projeto
     url: https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node
     about: Consulte o README.md, CONTRIBUTING.md e CONVENCIONAL.md antes de abrir uma issue.

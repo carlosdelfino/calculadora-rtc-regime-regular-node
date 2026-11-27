@@ -15,7 +15,7 @@
     "regime-regular"
   ],
   "author": "Carlos Delfino <consultoria@carlosdelfino.eti.br>",
-  "license": "CC-BY-SA-4.0",
+  "license": "MIT",
   "engines": {
     "node": ">=18"
   }

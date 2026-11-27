@@ -8,7 +8,7 @@ tags:
 ![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Guia%20de%20Contribui%C3%A7%C3%A3o&fontSize=36&fontAlignY=35&animation=twinkling)
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=RapportTecnologia.calculadora-rtc-regime-regular-node_contributing)
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Language: Portuguese](https://img.shields.io/badge/Language-Portuguese-brightgreen.svg)
 ![Status](https://img.shields.io/badge/Status-Ongoing-yellow)
 [![GitHub Issues](https://img.shields.io/github/issues/carlosdelfino/calculadora-rtc-regime-regular-node)](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/issues)
@@ -58,8 +58,7 @@ Ao abrir uma issue, selecione o template adequado:
 | **Sugestão** | Melhorias de processo, documentação, arquitetura ou ideias gerais |
 
 > **Vulnerabilidades de segurança NÃO devem ser reportadas em issues públicas.**
-> Contate diretamente o mantenedor: <consultoria@carlosdelfino.eti.br> ou
-> WhatsApp +55 (85) 98520-5490.
+> Siga o canal privado descrito em [SECURITY.md](./SECURITY.md).
 
 ## 3. Títulos descritivos e objetivos claros
 
