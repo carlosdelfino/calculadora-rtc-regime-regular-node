@@ -3,7 +3,7 @@ description: >-
   Calculadora da Reforma Tributária do Consumo (IBS, CBS e Imposto Seletivo)
   para o Regime Regular. Port Node.js do projeto Java da Receita Federal.
 lang: pt-BR
-theme: minima
+remote_theme: zerostaticthemes/jekyll-serif-theme
 author: Carlos Delfino
 url: https://carlosdelfino.github.io
 baseurl: /calculadora-rtc-regime-regular-node
@@ -13,6 +13,8 @@ header_pages:
 
 markdown: kramdown
 plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap

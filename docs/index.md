@@ -1,6 +1,7 @@
 ---
-layout: home
+layout: page
 title: Calculadora RTC — Regime Regular
+description: Calculadora da Reforma Tributária do Consumo para o Regime Regular — port Node.js do projeto Java da Receita Federal.
 ---
 
 ## Sobre o projeto
