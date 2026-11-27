@@ -67,11 +67,33 @@ Referências institucionais:
 [Ministério da Fazenda — Reforma Tributária](https://www.gov.br/fazenda/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria) ·
 [PGFN — Por dentro da Reforma Tributária do Consumo](https://www.gov.br/pgfn/pt-br/cidadania-tributaria/por-dentro-da-reforma-tributaria-do-consumo)
 
+## Estrutura do monorepo
+
+Este repositório orquestra os componentes como **submódulos Git**:
+
+| Pasta | Repositório | Componente |
+|---|---|---|
+| `backend/` | [calculadora-rtc-regime-regular-node-backend](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node-backend) | API do cálculo (IBS/CBS, Regime Regular) |
+| `frontend/` | [calculadora-rtc-regime-regular-node-frontend](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node-frontend) | SPA: Vite + TypeScript + React Router + Redux Toolkit + Refine |
+
 ## Requisitos
 
 - Node.js >= 18
+- Git
 
 ## Uso
+
+Clone com os submódulos:
+
+```bash
+git clone --recurse-submodules https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node.git
+```
+
+Ou, em um clone existente:
+
+```bash
+git submodule update --init --recursive
+```
 
 ```bash
 npm start
@@ -117,5 +139,6 @@ WhatsApp: +55 (85) 98520-5490
 | 2026-11-27 | 0.1.1 | Adicionada seção sobre a Reforma Tributária do Consumo com legislação de referência |
 | 2026-11-27 | 0.1.2 | Documentada origem como port Node.js do projeto Java da Receita Federal |
 | 2026-11-27 | 0.1.3 | Adicionados GOVERNANCE, CHANGELOG, LICENSE (MIT), Código de Conduta e Política de Segurança |
+| 2026-11-27 | 0.1.4 | Adicionados submódulos `backend/` e `frontend/` |
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&animation=twinkling)
