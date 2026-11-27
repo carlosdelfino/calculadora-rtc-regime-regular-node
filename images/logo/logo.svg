@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 48">
+  <title>Calculadora RTC — Regime Regular</title>
+  <svg width="48" height="48" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="14" fill="#12304a"/>
+    <rect x="14" y="10" width="36" height="44" rx="6" fill="none" stroke="#71d9bf" stroke-width="4"/>
+    <rect x="21" y="17" width="22" height="9" rx="2" fill="#71d9bf"/>
+    <path d="M23 34h3m12 0h3M23 44h3" stroke="#71d9bf" stroke-width="6" stroke-linecap="round"/>
+    <path d="M37 44h6" stroke="#e9b95c" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <text x="60" y="23" fill="#12304a" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Calculadora RTC</text>
+  <text x="61" y="41" fill="#087f8c" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="2.5">REGIME REGULAR</text>
+</svg>

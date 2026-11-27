@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="pt-BR"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/feed.xml" rel="self" type="application/atom+xml" /><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/" rel="alternate" type="text/html" hreflang="pt-BR" /><updated>2026-11-27T18:51:00-03:00</updated><id>https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/feed.xml</id><title type="html">Calculadora RTC — Regime Regular</title><subtitle>Calculadora da Reforma Tributária do Consumo (IBS, CBS e Imposto Seletivo) para o Regime Regular. Port Node.js do projeto Java da Receita Federal.</subtitle><author><name>Carlos Delfino</name></author><entry><title type="html">CBS: como aplicar</title><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/cbs-como-aplicar/" rel="alternate" type="text/html" title="CBS: como aplicar" /><published>2026-11-27T08:00:00-03:00</published><updated>2026-11-27T08:00:00-03:00</updated><id>https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/cbs-como-aplicar</id><content type="html" xml:base="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/cbs-como-aplicar/"><![CDATA[<p>A <strong>Contribuição Social sobre Bens e Serviços (CBS)</strong> é a parcela federal do IVA dual. Substitui PIS/Pasep e Cofins no calendário da reforma e compartilha diversas regras de incidência, base e creditamento com o IBS. Embora seja frequentemente incluída na expressão “novos impostos”, sua natureza jurídica é de <strong>contribuição social</strong>.</p>
+
+<p>Este guia explica a aplicação no regime regular com fontes conferidas em <strong>27 de novembro de 2026</strong>. As alíquotas usadas nos exemplos de regime permanente são hipotéticas e não devem ser cadastradas como percentuais vigentes.</p>
+
+<details class="rtc-article-toc">
+  <summary>Neste artigo</summary>
+
+<ul id="markdown-toc">
+  <li><a href="#de-onde-vêm-as-regras-da-cbs" id="markdown-toc-de-onde-vêm-as-regras-da-cbs">De onde vêm as regras da CBS</a></li>
+  <li><a href="#o-que-deve-ser-analisado-antes-do-cálculo" id="markdown-toc-o-que-deve-ser-analisado-antes-do-cálculo">O que deve ser analisado antes do cálculo</a></li>
+  <li><a href="#como-formar-a-base-de-cálculo" id="markdown-toc-como-formar-a-base-de-cálculo">Como formar a base de cálculo</a></li>
+  <li><a href="#como-escolher-a-alíquota" id="markdown-toc-como-escolher-a-alíquota">Como escolher a alíquota</a></li>
+  <li><a href="#exemplo-de-cálculo-no-regime-regular" id="markdown-toc-exemplo-de-cálculo-no-regime-regular">Exemplo de cálculo no regime regular</a></li>
+  <li><a href="#o-que-permite-aproveitar-créditos" id="markdown-toc-o-que-permite-aproveitar-créditos">O que permite aproveitar créditos</a></li>
+  <li><a href="#o-tratamento-de-2026" id="markdown-toc-o-tratamento-de-2026">O tratamento de 2026</a></li>
+  <li><a href="#o-que-muda-a-partir-de-2027" id="markdown-toc-o-que-muda-a-partir-de-2027">O que muda a partir de 2027</a></li>
+  <li><a href="#como-documentar-apurar-e-recolher" id="markdown-toc-como-documentar-apurar-e-recolher">Como documentar, apurar e recolher</a></li>
+  <li><a href="#simples-nacional-regimes-específicos-e-a-calculadora" id="markdown-toc-simples-nacional-regimes-específicos-e-a-calculadora">Simples Nacional, regimes específicos e a calculadora</a></li>
+</ul>
+
+</details>
+
+<h2 id="de-onde-vêm-as-regras-da-cbs">De onde vêm as regras da CBS</h2>
+
+<p>A competência da União está no art. 195, V, da Constituição, incluído pela <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">EC 132/2023</a>. A CBS foi instituída pela <strong>LC 214/2025</strong>, alterada posteriormente, inclusive pela LC 227/2026. A regulamentação federal foi estabelecida pelo <strong>Decreto 12.955, de 29 de abril de 2026</strong>. A administração cabe à Receita Federal, observadas as atribuições legais dos órgãos envolvidos na cobrança.</p>
+
+<p>As referências são o <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">texto atualizado da LC 214</a> e o <a href="https://www2.camara.leg.br/legin/fed/decret/2026/decreto-12955-29-abril-2026-799019-publicacaooriginal-179077-pe.html">Decreto 12.955/2026</a>. O decreto e os atos complementares devem ser lidos em sua versão vigente na data da operação.</p>
+
+<h2 id="o-que-deve-ser-analisado-antes-do-cálculo">O que deve ser analisado antes do cálculo</h2>
+
+<p>A incidência geral alcança operações onerosas com bens e serviços e também importações, inclusive situações envolvendo direitos e bens imateriais. A lei define contribuintes, responsáveis, imunidades e não incidências. Também existem hipóteses específicas de tributação de fornecimentos sem contraprestação.</p>
+
+<p>Para enquadrar uma operação, identifique o bem ou serviço, o fornecedor, o adquirente, a data do fato gerador, a localização relevante e o regime tributário. Uma venda comum, uma exportação e uma importação não podem ser tratadas como três operações idênticas apenas porque têm o mesmo preço. Os pontos de partida são os arts. 3º a 11 e os capítulos de comércio exterior da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="como-formar-a-base-de-cálculo">Como formar a base de cálculo</h2>
+
+<p>A regra geral toma o valor da operação e aplica os ajustes legais. Valores cobrados pelo fornecedor a título de transporte, seguro, encargos e outras parcelas podem compor a base. O documento e as condições da operação são necessários para saber o que incluir.</p>
+
+<p>A CBS e o IBS devidos na própria operação não entram na base desses tributos. O IPI, os descontos incondicionais e outras parcelas legalmente excluídas também exigem tratamento próprio. Na transição, a lei prevê exclusões para os tributos antigos que ainda incidem. Já o IS, quando devido, integra a base de IBS e CBS segundo as regras aplicáveis. Essa composição decorre do art. 12 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>.</p>
+
+<p>“Por fora” significa, nesse contexto, que a CBS não é calculada sobre uma base que contenha a própria CBS. Isso não equivale a afirmar que nenhum outro tributo ou encargo possa integrar a base.</p>
+
+<h2 id="como-escolher-a-alíquota">Como escolher a alíquota</h2>
+
+<p>Verifique primeiro a alíquota válida para a data e o enquadramento da operação. Depois, examine reduções e regimes diferenciados ou específicos. Cesta básica, saúde, educação, imóveis e serviços financeiros, por exemplo, não devem receber um tratamento padronizado sem a conferência dos dispositivos e anexos correspondentes.</p>
+
+<p>É necessário distinguir <strong>alíquota de referência</strong>, <strong>alíquota estabelecida na forma da legislação</strong> e <strong>alíquota efetivamente aplicável à operação</strong>, após os ajustes permitidos. Estimativas divulgadas durante a tramitação não se tornam automaticamente uma alíquota legal. A fixação e a calibragem estão disciplinadas nos arts. 14 e 349 e seguintes da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>. A <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria-do-consumo/orientacoes-da-reforma-tributaria">Receita explica o processo de cálculo das alíquotas de referência</a>.</p>
+
+<h2 id="exemplo-de-cálculo-no-regime-regular">Exemplo de cálculo no regime regular</h2>
+
+<p>Suponha uma base já formada corretamente de <strong>R$ 1.000,00</strong> e uma alíquota <strong>hipotética de 9%</strong>, sem redução. Este exemplo não representa a alíquota de teste de 2026 nem uma afirmação sobre a alíquota de 2027.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Débito de CBS = R$ 1.000,00 × 9% = R$ 90,00
+</code></pre></div></div>
+
+<p>Considere ainda uma aquisição com base de R$ 400,00, sujeita à mesma alíquota hipotética, que tenha gerado <strong>R$ 36,00 de crédito válido e já apropriável</strong>. Sem outros ajustes, compensações ou recolhimentos anteriores:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Saldo de CBS = R$ 90,00 − R$ 36,00 = R$ 54,00
+</code></pre></div></div>
+
+<p>Esse resultado ilustra a apuração por débitos e créditos. Uma empresa com várias operações deve consolidar o período de apuração e tratar separadamente os valores já extintos. O saldo não corresponde necessariamente ao valor destacado em uma única nota.</p>
+
+<h2 id="o-que-permite-aproveitar-créditos">O que permite aproveitar créditos</h2>
+
+<p>O regime regular adota não cumulatividade, com condições legais. Em regra, o crédito depende de documento fiscal eletrônico idôneo e da extinção do débito da aquisição por uma das modalidades admitidas. A lei também prevê exceções e condições de implantação, que precisam ser verificadas, inclusive no art. 48.</p>
+
+<p>Despesas de uso ou consumo pessoal e outras vedações não se transformam em crédito apenas porque passaram pela conta bancária da empresa. Da mesma forma, crédito de CBS e crédito de IBS são controlados separadamente: <strong>um não pode ser utilizado para quitar o outro</strong>. Consulte os arts. 47 a 57 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<p>Nas exportações, a desoneração e a manutenção ou utilização de créditos seguem a disciplina própria. Nas importações, é necessário conferir quem recolhe, a base e as condições de creditamento. Não basta aplicar o procedimento de uma venda doméstica sem os ajustes de comércio exterior.</p>
+
+<h2 id="o-tratamento-de-2026">O tratamento de 2026</h2>
+
+<p>Para os fatos geradores de 2026, a alíquota geral de teste da CBS é <strong>0,9%</strong>. Sobre uma base de R$ 1.000,00, sem redução ou regra específica, o valor de teste é de <strong>R$ 9,00</strong>. O IBS, nessa mesma hipótese, corresponde a R$ 1,00. Esses valores não são uma previsão de carga permanente.</p>
+
+<p>O art. 348 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a> dispensa o recolhimento de IBS e CBS para quem cumprir as obrigações acessórias previstas. O contribuinte dispensado continua sujeito ao pagamento integral de PIS/Pasep e Cofins conforme suas regras. Se houver recolhimento dos novos tributos, aplica-se a compensação e, quando cabível, o ressarcimento previstos para o período.</p>
+
+<p>As alíquotas de teste também não devem ser aplicadas indiscriminadamente a operações de optantes pelo Simples Nacional. O enquadramento e os cronogramas dos documentos precisam ser conferidos. O <a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/comunicado-conjunto">comunicado conjunto da Receita e do CGIBS</a> esclarece a distinção entre prestar as informações e recolher o tributo.</p>
+
+<h2 id="o-que-muda-a-partir-de-2027">O que muda a partir de 2027</h2>
+
+<p>A partir de 2027, a CBS substitui PIS/Pasep e Cofins nos termos da legislação de transição. Em 2027 e 2028, a regra geral determina redução de <strong>0,1 ponto percentual</strong> na alíquota da CBS, com tratamentos próprios para hipóteses como combustíveis e regimes reduzidos.</p>
+
+<p>Reduzir 0,1 ponto percentual é diferente de reduzir a alíquota em 0,1% de seu valor. Por exemplo, <strong>uma alíquota meramente hipotética de 9% passaria a 8,9%</strong> com a subtração de 0,1 ponto percentual. Isso explica a unidade usada na lei e não fixa a alíquota aplicável a qualquer ano. A referência é o art. 347 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<p>Os saldos de PIS/Cofins anteriores, os contratos em curso e os recebimentos relativos a operações antigas têm regras de transição. Eles não devem ser simplesmente renomeados como créditos ou receitas de CBS. A lei trata desses temas em sua disciplina de transição, inclusive no art. 408.</p>
+
+<h2 id="como-documentar-apurar-e-recolher">Como documentar, apurar e recolher</h2>
+
+<p>Na emissão do documento fiscal aplicável, informe a classificação e os valores nos campos definidos pelo leiaute vigente. O sistema deve identificar a data, a base, a alíquota e o tratamento da operação. Notas canceladas, devoluções e ajustes precisam repercutir na apuração correspondente.</p>
+
+<p>Na apuração, confira os dados apresentados pela administração tributária, os documentos e as formas de extinção do débito. <strong>Split payment</strong> designa o recolhimento na liquidação financeira da operação; sua aplicação depende das regras e da implantação operacional. Não é autorização para presumir que qualquer pagamento com cartão já quitou a CBS. A disciplina de pagamento e apuração consta dos arts. 27 a 46 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a> e dos <a href="https://cgibs.gov.br/atos-conjuntos">atos conjuntos publicados pelo CGIBS</a>.</p>
+
+<h2 id="simples-nacional-regimes-específicos-e-a-calculadora">Simples Nacional, regimes específicos e a calculadora</h2>
+
+<p>Optantes do Simples têm tratamento próprio e podem, nas condições legais, optar pela apuração regular de IBS e CBS. É necessário examinar os efeitos dessa escolha sobre o recolhimento e os créditos do fornecedor e do cliente. A regra de um contribuinte do regime regular não deve ser transplantada automaticamente para quem permanece recolhendo pelo Simples.</p>
+
+<p>Ao usar a calculadora deste projeto, confira a cobertura implementada e a versão das regras. Uma rotina que calcula o débito de CBS de uma operação não resolve, por si só, a apuração mensal, a elegibilidade de créditos antigos ou a escrituração de um regime específico.</p>
+
+<p>Para entender a outra parcela do IVA, leia <a href="/calculadora-rtc-regime-regular-node/ibs-como-aplicar/">IBS: como aplicar</a>. Para operações sujeitas à tributação seletiva, consulte <a href="/calculadora-rtc-regime-regular-node/imposto-seletivo-como-aplicar/">Imposto Seletivo: como aplicar</a>.</p>]]></content><author><name>Carlos Delfino</name></author><summary type="html"><![CDATA[Saiba como funciona a Contribuição sobre Bens e Serviços, da formação da base aos créditos, ao recolhimento e à substituição de PIS/Pasep e Cofins.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" /><media:content medium="image" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">História da Reforma Tributária do Consumo</title><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/historia-da-reforma-tributaria-do-consumo/" rel="alternate" type="text/html" title="História da Reforma Tributária do Consumo" /><published>2026-11-27T08:00:00-03:00</published><updated>2026-11-27T08:00:00-03:00</updated><id>https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/historia-da-reforma-tributaria-do-consumo</id><content type="html" xml:base="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/historia-da-reforma-tributaria-do-consumo/"><![CDATA[<p>A Reforma Tributária do Consumo nasceu de uma discussão sobre como simplificar a tributação de bens e serviços sem concentrar toda a arrecadação em uma única esfera de governo. Seu resultado combina uma mudança constitucional, leis complementares, regulamentação administrativa e uma transição de vários anos. Para compreender os novos tributos, é preciso acompanhar essas etapas separadamente.</p>
+
+<p>Este artigo percorre os principais marcos legislativos até <strong>27 de novembro de 2026</strong>. As fichas de tramitação citadas permitem consultar também cada emenda, parecer, destaque e votação. Os acontecimentos posteriores a essa data precisam ser conferidos nas fontes oficiais.</p>
+
+<details class="rtc-article-toc">
+  <summary>Neste artigo</summary>
+
+<ul id="markdown-toc">
+  <li><a href="#o-problema-que-a-reforma-procurou-enfrentar" id="markdown-toc-o-problema-que-a-reforma-procurou-enfrentar">O problema que a reforma procurou enfrentar</a></li>
+  <li><a href="#2019-duas-propostas-recolocam-o-tema-no-congresso" id="markdown-toc-2019-duas-propostas-recolocam-o-tema-no-congresso">2019: duas propostas recolocam o tema no Congresso</a></li>
+  <li><a href="#2023-a-aprovação-da-mudança-constitucional" id="markdown-toc-2023-a-aprovação-da-mudança-constitucional">2023: a aprovação da mudança constitucional</a></li>
+  <li><a href="#o-que-foi-definido-pela-constituição" id="markdown-toc-o-que-foi-definido-pela-constituição">O que foi definido pela Constituição</a></li>
+  <li><a href="#2024-e-2025-o-plp-68-se-transforma-na-lc-214" id="markdown-toc-2024-e-2025-o-plp-68-se-transforma-na-lc-214">2024 e 2025: o PLP 68 se transforma na LC 214</a></li>
+  <li><a href="#2024-a-2026-a-gestão-do-ibs-e-a-lc-227" id="markdown-toc-2024-a-2026-a-gestão-do-ibs-e-a-lc-227">2024 a 2026: a gestão do IBS e a LC 227</a></li>
+  <li><a href="#2026-da-lei-para-os-sistemas-e-regulamentos" id="markdown-toc-2026-da-lei-para-os-sistemas-e-regulamentos">2026: da lei para os sistemas e regulamentos</a></li>
+  <li><a href="#linha-do-tempo-dos-principais-marcos" id="markdown-toc-linha-do-tempo-dos-principais-marcos">Linha do tempo dos principais marcos</a></li>
+  <li><a href="#quando-cada-mudança-chega-às-operações" id="markdown-toc-quando-cada-mudança-chega-às-operações">Quando cada mudança chega às operações</a></li>
+  <li><a href="#como-acompanhar-a-tramitação-daqui-em-diante" id="markdown-toc-como-acompanhar-a-tramitação-daqui-em-diante">Como acompanhar a tramitação daqui em diante</a></li>
+</ul>
+
+</details>
+
+<h2 id="o-problema-que-a-reforma-procurou-enfrentar">O problema que a reforma procurou enfrentar</h2>
+
+<p>O modelo anterior distribuiu a tributação do consumo entre diferentes tributos: PIS/Pasep e Cofins no âmbito federal, IPI sobre produtos industrializados, ICMS nos estados e no Distrito Federal e ISS nos municípios. Essa organização produziu regras distintas sobre incidência, créditos e local da cobrança.</p>
+
+<p>As propostas de reforma buscaram aproximar o sistema de um imposto sobre valor agregado: o tributo aparece nas operações de venda e prestação, enquanto os créditos admitidos nas aquisições evitam que a mesma carga se acumule indefinidamente na cadeia. O desenho aprovado também desloca a arrecadação para o destino e incorpora instrumentos como a devolução de tributos a famílias de baixa renda. Esses princípios e a distribuição das competências estão na <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">Emenda Constitucional 132/2023</a>.</p>
+
+<h2 id="2019-duas-propostas-recolocam-o-tema-no-congresso">2019: duas propostas recolocam o tema no Congresso</h2>
+
+<p>Em <strong>3 de abril de 2019</strong>, o deputado Baleia Rossi apresentou a <strong>PEC 45/2019</strong> na Câmara. A proposta pretendia reorganizar a tributação do consumo por meio de uma alteração da Constituição. A Comissão de Constituição e Justiça e de Cidadania aprovou sua admissibilidade em <strong>22 de maio de 2019</strong>; depois, a discussão de mérito seguiu para uma comissão especial, com audiências e apresentação de emendas. A <a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2196833">ficha original da PEC 45</a> registra esse percurso.</p>
+
+<p>No Senado, a <strong>PEC 110/2019</strong> foi apresentada em julho, tendo Davi Alcolumbre como primeiro signatário. Embora as propostas compartilhassem o objetivo de simplificação, não eram textos idênticos. O processo que chegou à promulgação usou a PEC 45 como veículo legislativo. A origem da proposta do Senado consta do <a href="https://www12.senado.leg.br/noticias/materias/2019/07/31/senado-se-aproxima-de-governadores-e-aprova-projetos-relativos-ao-pacto-federativo/2019/07/09/davi-anuncia-apresentacao-da-pec-da-reforma-tributaria">registro da apresentação da PEC 110</a>.</p>
+
+<h2 id="2023-a-aprovação-da-mudança-constitucional">2023: a aprovação da mudança constitucional</h2>
+
+<p>Em 2023, a Câmara retomou a discussão com um grupo de trabalho, negociações com entes federativos e setores econômicos e a elaboração de um substitutivo. Sob relatoria de Aguinaldo Ribeiro, a proposta foi aprovada em dois turnos em julho e encaminhada ao Senado.</p>
+
+<p>No Senado, o relator Eduardo Braga apresentou mudanças. Em <strong>8 de novembro de 2023</strong>, a proposta foi aprovada em dois turnos. Como o texto havia sido alterado, retornou à Câmara. Em <strong>15 de dezembro</strong>, os deputados concluíram a votação da versão final. O <a href="https://www.congressonacional.leg.br/materias/materias-bicamerais/-/ver/pec-45-2019">histórico bicameral da PEC 45</a> reúne as passagens pelas duas Casas; o <a href="https://www.congressonacional.leg.br/web/atividade/sessao-plenaria/-/pauta/25786">registro da votação do Senado</a> documenta a aprovação de novembro.</p>
+
+<p>Uma PEC exige aprovação em dois turnos em cada Casa, com três quintos dos votos dos respectivos membros. A emenda constitucional é promulgada pelo Congresso: essa etapa não passa por sanção ou veto presidencial. Em <strong>20 de dezembro de 2023</strong>, a proposta foi promulgada como <strong>EC 132/2023</strong>. A <a href="https://www2.camara.leg.br/legin/fed/emecon/2023/emendaconstitucional-132-20-dezembro-2023-795084-norma-pl.html">ficha da Emenda Constitucional 132</a> relaciona a norma e sua origem legislativa.</p>
+
+<h2 id="o-que-foi-definido-pela-constituição">O que foi definido pela Constituição</h2>
+
+<p>O resultado foi um <strong>IVA dual</strong>: dois tributos com regras harmonizadas, administrados por esferas diferentes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tributo</th>
+      <th>Competência</th>
+      <th>Papel na reforma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IBS</td>
+      <td>Estados, Distrito Federal e municípios</td>
+      <td>Substituição gradual de ICMS e ISS.</td>
+    </tr>
+    <tr>
+      <td>CBS</td>
+      <td>União</td>
+      <td>Substituição de PIS/Pasep e Cofins.</td>
+    </tr>
+    <tr>
+      <td>Imposto Seletivo</td>
+      <td>União</td>
+      <td>Tributação de bens e serviços definidos em lei como prejudiciais à saúde ou ao meio ambiente.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>O Imposto Seletivo não é uma terceira parcela do IVA. Tem finalidade e estrutura próprias. Tampouco corresponde a uma simples troca de nome do IPI: a Constituição previu tratamento específico para o IPI e para a proteção da Zona Franca de Manaus. As competências e a transição devem ser lidas na <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">EC 132/2023</a>, sem presumir que todos os tributos antigos desapareceram na data da promulgação.</p>
+
+<h2 id="2024-e-2025-o-plp-68-se-transforma-na-lc-214">2024 e 2025: o PLP 68 se transforma na LC 214</h2>
+
+<p>Depois da Constituição, era necessário definir fatos geradores, contribuintes, bases, créditos, regimes diferenciados e obrigações. O Poder Executivo encaminhou o <strong>PLP 68/2024</strong>, registrado na Câmara em <strong>25 de abril de 2024</strong>.</p>
+
+<p>O texto passou por grupo de trabalho e debates na Câmara, que o aprovou em julho de 2024. O Senado aprovou um substitutivo em <strong>12 de dezembro</strong>. Em <strong>17 de dezembro</strong>, a Câmara deliberou sobre as mudanças do Senado e concluiu a votação. Diferentemente de uma PEC, esse projeto seguiu para sanção presidencial. Em <strong>16 de janeiro de 2025</strong>, foi sancionada, com vetos, a <strong>Lei Complementar 214/2025</strong>. A sequência está no <a href="https://www.congressonacional.leg.br/pt_BR/materias/materias-bicamerais/-/ver/plp-68-2024">histórico do PLP 68/2024</a>.</p>
+
+<p>A LC 214 instituiu os três tributos e detalhou seu funcionamento. Os vetos foram submetidos ao Congresso, com deliberações posteriores e promulgação de dispositivos que tiveram o veto rejeitado. Por isso, um projeto aprovado, a publicação original da lei e seu texto consolidado podem ter redações diferentes. O <a href="https://www.congressonacional.leg.br/materias/vetos/-/veto/detalhe/17149">Veto 7/2025</a> e o <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">texto atualizado da LC 214</a> permitem acompanhar essas diferenças.</p>
+
+<h2 id="2024-a-2026-a-gestão-do-ibs-e-a-lc-227">2024 a 2026: a gestão do IBS e a LC 227</h2>
+
+<p>A administração compartilhada do IBS exigiu outra frente de regulamentação. O <strong>PLP 108/2024</strong>, apresentado em junho de 2024, tratou da organização do Comitê Gestor, do processo administrativo e da distribuição da arrecadação, entre outros temas.</p>
+
+<p>A Câmara aprovou o texto-base em agosto de 2024 e continuou a apreciação dos destaques. O Senado aprovou um substitutivo em <strong>30 de setembro de 2025</strong>. Após o retorno à Câmara, a redação final foi aprovada em <strong>16 de dezembro de 2025</strong>. A sanção, com vetos, ocorreu em <strong>13 de janeiro de 2026</strong>, resultando na <strong>LC 227/2026</strong>. O <a href="https://www.congressonacional.leg.br/pt_BR/materias/materias-bicamerais/-/ver/plp-108-2024">histórico bicameral do PLP 108</a> registra essas etapas.</p>
+
+<p>Além de estruturar o CGIBS, a lei modificou dispositivos da LC 214. Ler apenas a versão de janeiro de 2025 pode, portanto, levar a uma regra superada. A referência para essa segunda etapa é a <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm">LC 227/2026</a>, especialmente sua disciplina do Comitê e as alterações da legislação anterior.</p>
+
+<h2 id="2026-da-lei-para-os-sistemas-e-regulamentos">2026: da lei para os sistemas e regulamentos</h2>
+
+<p>A execução exige documentos fiscais, cadastros, apuração e integração entre administrações. Em abril de 2026, o <strong>Decreto 12.955/2026</strong> regulamentou a CBS; a <strong>Resolução CGIBS 6/2026</strong> disciplinou o IBS. As regras comuns devem ser interpretadas de forma coordenada. As referências estão na <a href="https://www2.camara.leg.br/legin/fed/decret/2026/decreto-12955-29-abril-2026-799019-publicacaooriginal-179077-pe.html">publicação do Decreto 12.955</a> e no <a href="https://www.cgibs.gov.br/resolucoes">repositório de resoluções do CGIBS</a>.</p>
+
+<p>O Imposto Seletivo recebeu também a <strong>MP 1.399, de 4 de novembro de 2026</strong>, com disciplina para a implantação gradual em 2027 e produção de efeitos prevista para <strong>2 de fevereiro de 2027</strong>. Uma medida provisória tem força de lei, mas depende de apreciação do Congresso; não deve ser tratada como lei de conversão já aprovada. As regras devem ser acompanhadas no <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm">texto da MP 1.399/2026</a>.</p>
+
+<h2 id="linha-do-tempo-dos-principais-marcos">Linha do tempo dos principais marcos</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data ou período</th>
+      <th>Etapa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Abril de 2019</td>
+      <td>Apresentação da PEC 45 na Câmara.</td>
+    </tr>
+    <tr>
+      <td>Maio de 2019</td>
+      <td>Admissibilidade da PEC 45 na CCJ.</td>
+    </tr>
+    <tr>
+      <td>Julho de 2019</td>
+      <td>Apresentação da PEC 110 no Senado.</td>
+    </tr>
+    <tr>
+      <td>Julho de 2023</td>
+      <td>Aprovação da PEC 45 na Câmara e envio ao Senado.</td>
+    </tr>
+    <tr>
+      <td>Novembro de 2023</td>
+      <td>Aprovação do substitutivo no Senado.</td>
+    </tr>
+    <tr>
+      <td>Dezembro de 2023</td>
+      <td>Votação final na Câmara e promulgação da EC 132.</td>
+    </tr>
+    <tr>
+      <td>Abril a dezembro de 2024</td>
+      <td>Tramitação do PLP 68 nas duas Casas.</td>
+    </tr>
+    <tr>
+      <td>Janeiro de 2025</td>
+      <td>Sanção da LC 214, com vetos.</td>
+    </tr>
+    <tr>
+      <td>2025</td>
+      <td>Apreciação de vetos e tramitação do PLP 108.</td>
+    </tr>
+    <tr>
+      <td>Janeiro de 2026</td>
+      <td>Sanção da LC 227, com vetos.</td>
+    </tr>
+    <tr>
+      <td>Abril de 2026</td>
+      <td>Regulamentação de CBS e IBS.</td>
+    </tr>
+    <tr>
+      <td>Novembro de 2026</td>
+      <td>Publicação da MP 1.399 sobre a implantação do IS.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Essa síntese usa as fichas legislativas e as normas citadas nas seções anteriores. Ela cobre os marcos de formação do modelo; a íntegra dos autos legislativos contém os atos intermediários e suas versões.</p>
+
+<h2 id="quando-cada-mudança-chega-às-operações">Quando cada mudança chega às operações</h2>
+
+<p><strong>2026:</strong> fase de teste, com CBS de 0,9% e IBS de 0,1%, observados os enquadramentos legais. O recolhimento é dispensado para quem cumpre as obrigações acessórias previstas. Essa dispensa não elimina PIS/Pasep e Cofins nem torna opcionais os documentos fiscais. Quando houver recolhimento, existem regras próprias de compensação. Veja os arts. 343 a 348 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>.</p>
+
+<p><strong>2027 e 2028:</strong> a CBS assume a substituição de PIS/Pasep e Cofins. Na regra geral, a alíquota da CBS aplicável nesse período tem redução de 0,1 ponto percentual, enquanto o IBS soma 0,1%, dividido em 0,05% estadual e 0,05% municipal. Para o IS, é necessário considerar o calendário próprio da MP 1.399 e seus atos posteriores, em vez de presumir cobrança desde o primeiro dia do ano. As normas são a <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a> e a <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm">MP 1.399</a>.</p>
+
+<p><strong>2029 a 2032:</strong> ICMS e ISS são reduzidos gradualmente, enquanto o IBS avança. <strong>2033:</strong> completa-se a substituição de ICMS e ISS. Esse calendário das operações não deve ser confundido com a transição da distribuição de receitas entre os entes, que tem disciplina própria e mais longa. A <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria-do-consumo/entenda">Receita Federal apresenta o calendário de implantação</a>; a repartição e sua transição constam também da <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">EC 132</a>.</p>
+
+<h2 id="como-acompanhar-a-tramitação-daqui-em-diante">Como acompanhar a tramitação daqui em diante</h2>
+
+<p>Para verificar uma regra, comece pela Constituição, consulte a lei complementar consolidada e identifique o regulamento e os atos técnicos aplicáveis à operação. Para uma proposta em discussão, confira sua situação na Câmara, no Senado ou no Congresso. Um anúncio, parecer ou aprovação em apenas uma Casa não significa, por si só, que a regra já possa ser aplicada na emissão de notas.</p>
+
+<p>Também é necessário distinguir a publicação da norma de sua produção de efeitos. Esse cuidado evita cadastrar uma alíquota futura como vigente ou usar a alíquota de teste depois do período correspondente.</p>
+
+<p>Para seguir da história à aplicação, leia os guias de <a href="/calculadora-rtc-regime-regular-node/ibs-como-aplicar/">IBS</a>, <a href="/calculadora-rtc-regime-regular-node/cbs-como-aplicar/">CBS</a> e <a href="/calculadora-rtc-regime-regular-node/imposto-seletivo-como-aplicar/">Imposto Seletivo</a>.</p>]]></content><author><name>Carlos Delfino</name></author><summary type="html"><![CDATA[Das propostas de 2019 à regulamentação de 2026, conheça a tramitação que deu origem ao IBS, à CBS e ao Imposto Seletivo e o calendário de implantação.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" /><media:content medium="image" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">IBS: como aplicar</title><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/ibs-como-aplicar/" rel="alternate" type="text/html" title="IBS: como aplicar" /><published>2026-11-27T08:00:00-03:00</published><updated>2026-11-27T08:00:00-03:00</updated><id>https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/ibs-como-aplicar</id><content type="html" xml:base="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/ibs-como-aplicar/"><![CDATA[<p>O <strong>Imposto sobre Bens e Serviços (IBS)</strong> é o tributo de competência compartilhada de estados, Distrito Federal e municípios que substitui gradualmente ICMS e ISS. Integra o IVA dual ao lado da CBS, mas tem arrecadação e créditos próprios. Sua aplicação começa pela identificação da operação e do destino, antes da multiplicação de qualquer percentual.</p>
+
+<p>Este guia trata principalmente do <strong>regime regular</strong>, com base nas fontes conferidas em 27 de novembro de 2026. Os exemplos com alíquotas hipotéticas explicam a mecânica e não constituem uma tabela de percentuais vigentes.</p>
+
+<details class="rtc-article-toc">
+  <summary>Neste artigo</summary>
+
+<ul id="markdown-toc">
+  <li><a href="#base-legal-e-administração" id="markdown-toc-base-legal-e-administração">Base legal e administração</a></li>
+  <li><a href="#em-quais-operações-o-ibs-pode-incidir" id="markdown-toc-em-quais-operações-o-ibs-pode-incidir">Em quais operações o IBS pode incidir</a></li>
+  <li><a href="#primeiro-passo-determinar-o-destino-da-operação" id="markdown-toc-primeiro-passo-determinar-o-destino-da-operação">Primeiro passo: determinar o destino da operação</a></li>
+  <li><a href="#segundo-passo-formar-a-base-de-cálculo" id="markdown-toc-segundo-passo-formar-a-base-de-cálculo">Segundo passo: formar a base de cálculo</a></li>
+  <li><a href="#terceiro-passo-identificar-as-alíquotas-aplicáveis" id="markdown-toc-terceiro-passo-identificar-as-alíquotas-aplicáveis">Terceiro passo: identificar as alíquotas aplicáveis</a></li>
+  <li><a href="#exemplo-de-débito-e-crédito-no-regime-regular" id="markdown-toc-exemplo-de-débito-e-crédito-no-regime-regular">Exemplo de débito e crédito no regime regular</a></li>
+  <li><a href="#quando-o-crédito-pode-ser-aproveitado" id="markdown-toc-quando-o-crédito-pode-ser-aproveitado">Quando o crédito pode ser aproveitado</a></li>
+  <li><a href="#como-aplicar-o-calendário-de-transição" id="markdown-toc-como-aplicar-o-calendário-de-transição">Como aplicar o calendário de transição</a></li>
+  <li><a href="#documento-fiscal-apuração-e-pagamento" id="markdown-toc-documento-fiscal-apuração-e-pagamento">Documento fiscal, apuração e pagamento</a></li>
+  <li><a href="#simples-nacional-e-situações-especiais" id="markdown-toc-simples-nacional-e-situações-especiais">Simples Nacional e situações especiais</a></li>
+  <li><a href="#relação-com-a-calculadora" id="markdown-toc-relação-com-a-calculadora">Relação com a calculadora</a></li>
+</ul>
+
+</details>
+
+<h2 id="base-legal-e-administração">Base legal e administração</h2>
+
+<p>O IBS está previsto no art. 156-A da Constituição, introduzido pela <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">EC 132/2023</a>. Foi instituído pela <strong>LC 214/2025</strong>, posteriormente alterada. A <strong>LC 227/2026</strong> organiza o CGIBS, a administração compartilhada, o contencioso e a distribuição de receitas. A regulamentação inclui a Resolução CGIBS 6/2026 e suas alterações.</p>
+
+<p>O Comitê coordena a gestão do tributo, mas não transforma o IBS em imposto federal. Estados e municípios participam da fiscalização e da cobrança conforme a organização legal. Consulte a <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm">LC 227</a> e as <a href="https://www.cgibs.gov.br/resolucoes">resoluções do CGIBS</a>.</p>
+
+<h2 id="em-quais-operações-o-ibs-pode-incidir">Em quais operações o IBS pode incidir</h2>
+
+<p>A regra geral alcança operações onerosas com bens e serviços, abrangendo bens materiais e imateriais, direitos e importações. Vendas, prestações de serviços, locações e licenciamentos podem estar no campo de incidência. A lei prevê ainda situações específicas de fornecimento não oneroso.</p>
+
+<p>Isso não significa tributar toda movimentação financeira. Existem imunidades, hipóteses de não incidência, alíquota zero, regimes diferenciados e regimes específicos. Relação de emprego e transferência de bens entre estabelecimentos do mesmo contribuinte, por exemplo, têm tratamento distinto de uma venda a terceiro. A análise parte dos arts. 3º a 9º e das regras de importação da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>.</p>
+
+<p>Antes de calcular, identifique também se o fornecedor é contribuinte, se está no regime regular e se há responsabilidade atribuída a terceiro. Ser pessoa jurídica, isoladamente, não resolve todas essas questões.</p>
+
+<h2 id="primeiro-passo-determinar-o-destino-da-operação">Primeiro passo: determinar o destino da operação</h2>
+
+<p>O IBS segue o princípio do destino. Para um bem móvel material, a regra geral considera o local de entrega ou disponibilização ao destinatário. Outras operações têm critérios próprios: imóveis, eventos, transporte e serviços prestados à distância não devem receber automaticamente a mesma regra.</p>
+
+<p>Uma empresa localizada no Ceará que entrega uma mercadoria em outro estado precisa determinar o destino segundo a lei. O endereço da sede do vendedor não basta para escolher o estado e o município da operação. As regras e exceções estão no art. 11 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="segundo-passo-formar-a-base-de-cálculo">Segundo passo: formar a base de cálculo</h2>
+
+<p>No regime geral, a base é o valor da operação, ajustado pelas inclusões e exclusões legais. Frete cobrado como parte do fornecimento, seguros e outros valores podem integrar a base. Descontos incondicionais documentados têm tratamento diferente de descontos dependentes de evento futuro.</p>
+
+<p>O IBS e a CBS da própria operação ficam fora de suas bases: a cobrança é feita <strong>por fora</strong>. Há outras exclusões, inclusive as relativas a tributos antigos durante a transição. O Imposto Seletivo, quando devido, deve ser considerado na formação da base de IBS e CBS conforme a legislação. Portanto, usar o total final da nota como base, sem decomposição, pode gerar erro. A referência é o art. 12 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 consolidada</a>.</p>
+
+<h2 id="terceiro-passo-identificar-as-alíquotas-aplicáveis">Terceiro passo: identificar as alíquotas aplicáveis</h2>
+
+<p>Na sistemática geral, o IBS da operação resulta da soma das parcelas estadual e municipal do destino. O Distrito Federal acumula as competências correspondentes. As alíquotas de referência e as fixadas pelos entes devem ser consideradas conforme o período e as regras constitucionais.</p>
+
+<p>Uma redução ou um regime específico não deve ser aplicado apenas porque o produto parece pertencer a certo setor. É necessário verificar os critérios legais, a classificação do item e, quando exigidos, a finalidade, o beneficiário e os requisitos documentais. A disciplina geral das alíquotas está nos arts. 14 a 18 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="exemplo-de-débito-e-crédito-no-regime-regular">Exemplo de débito e crédito no regime regular</h2>
+
+<p>Considere uma operação inteiramente hipotética, fora das particularidades do ano de teste: base legalmente apurada de <strong>R$ 1.000,00</strong>, parcela estadual de <strong>14%</strong> e parcela municipal de <strong>4%</strong>, sem redução. Esses percentuais são exclusivamente didáticos.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IBS estadual = R$ 1.000,00 × 14% = R$ 140,00
+IBS municipal = R$ 1.000,00 × 4% = R$ 40,00
+Débito total de IBS = R$ 180,00
+</code></pre></div></div>
+
+<p>Suponha que, no mesmo período, existam <strong>R$ 90,00 de créditos de IBS válidos e já apropriáveis</strong>, sem outros ajustes ou recolhimentos antecipados:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Saldo de IBS = R$ 180,00 − R$ 90,00 = R$ 90,00
+</code></pre></div></div>
+
+<p>O débito destacado na operação e o saldo final da apuração são conceitos diferentes. O valor da nota não informa, sozinho, quanto restará a pagar após a apuração.</p>
+
+<h2 id="quando-o-crédito-pode-ser-aproveitado">Quando o crédito pode ser aproveitado</h2>
+
+<p>O regime regular admite créditos das aquisições nos termos da lei, com exceções como uso ou consumo pessoal. A regra geral exige documento fiscal eletrônico idôneo e a extinção do débito correspondente à aquisição pelas modalidades legais. Há exceções e regras de implantação, inclusive no art. 48; por isso, nem a emissão da nota nem o pagamento comercial ao fornecedor, isoladamente, resolvem todos os requisitos.</p>
+
+<p>Os créditos são segregados: <strong>crédito de IBS não compensa CBS</strong>, e o inverso também é vedado. Devoluções, cancelamentos e perdas podem exigir ajustes. As condições estão nos arts. 47 a 57 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>. A <a href="https://www.sefaz.ba.gov.br/portaldareformatributaria/faqs/">Secretaria da Fazenda da Bahia explica o vínculo entre crédito e extinção do débito</a>.</p>
+
+<h2 id="como-aplicar-o-calendário-de-transição">Como aplicar o calendário de transição</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Período</th>
+      <th>Tratamento geral do IBS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026</td>
+      <td>Alíquota de teste de 0,1%, estadual; observar a dispensa de recolhimento condicionada às obrigações acessórias.</td>
+    </tr>
+    <tr>
+      <td>2027 e 2028</td>
+      <td>Total de 0,1%, dividido em 0,05% estadual e 0,05% municipal, com os ajustes legais.</td>
+    </tr>
+    <tr>
+      <td>2029 a 2032</td>
+      <td>Avanço do IBS e redução gradual de ICMS e ISS.</td>
+    </tr>
+    <tr>
+      <td>2033</td>
+      <td>Substituição integral de ICMS e ISS nas operações abrangidas pelo novo modelo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>No período de 2029 a 2032, ICMS e ISS preservam, respectivamente, <strong>90%, 80%, 70% e 60% de suas alíquotas</strong>, segundo a transição constitucional. Esses percentuais não são alíquotas de IBS a aplicar diretamente ao preço. A alíquota efetiva do IBS depende da disciplina daquele ano. As referências são os arts. 343 e 344 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a> e o <a href="https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria-do-consumo/entenda">calendário da Receita Federal</a>.</p>
+
+<p>Em 2026, sobre uma base de R$ 1.000,00 sujeita à regra geral, o destaque de teste seria de R$ 1,00. Isso não autoriza concluir que esse valor será efetivamente recolhido: a dispensa depende das condições legais e <strong>não dispensa as obrigações acessórias</strong>. O <a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/comunicado-conjunto">comunicado conjunto da Receita e do CGIBS</a> explica a fase de teste.</p>
+
+<h2 id="documento-fiscal-apuração-e-pagamento">Documento fiscal, apuração e pagamento</h2>
+
+<p>Na operação real, registre a classificação tributária, o destino, a base e os valores de IBS nos campos previstos para o documento fiscal aplicável. Os leiautes e as datas de exigência variam conforme o tipo de documento e os atos técnicos vigentes; não basta acrescentar uma observação de texto livre.</p>
+
+<p>Depois, confira débitos, créditos e extinções na apuração. O recolhimento na liquidação financeira, conhecido como <strong>split payment</strong>, é uma modalidade prevista em lei e depende de sua implementação e disciplina operacional. Não se deve recolher novamente um valor já extinto por outra modalidade. A apuração e as formas de extinção estão nos arts. 27 a 46 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>; os <a href="https://cgibs.gov.br/atos-conjuntos">atos conjuntos do CGIBS e da Receita</a> permitem acompanhar a execução.</p>
+
+<h2 id="simples-nacional-e-situações-especiais">Simples Nacional e situações especiais</h2>
+
+<p>O Simples Nacional não foi abolido pela reforma. A legislação prevê condições para recolher IBS e CBS pelo regime simplificado ou optar pela apuração regular desses tributos. Os efeitos sobre o crédito do adquirente mudam conforme a opção. Uma compra de optante do Simples não permite presumir o crédito de uma alíquota padrão cheia.</p>
+
+<p>Imóveis, combustíveis, serviços financeiros e outros setores também podem ter regimes próprios. Para esses casos, a fórmula geral deste artigo é apenas o ponto de partida. Consulte os arts. 41 e 47 e os capítulos específicos da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="relação-com-a-calculadora">Relação com a calculadora</h2>
+
+<p>Para conferir um resultado, tenha em mãos a data da operação, os dados de destino, a classificação tributária e os valores que formam a base. O cálculo de uma operação não substitui a apuração do período: é nessa segunda etapa que entram créditos, recolhimentos anteriores e ajustes. A utilização da calculadora deve respeitar a cobertura e a versão efetivamente implementadas no projeto.</p>
+
+<p>Para comparar as duas parcelas do IVA, siga para <a href="/calculadora-rtc-regime-regular-node/cbs-como-aplicar/">CBS: como aplicar</a>. A origem das regras está em <a href="/calculadora-rtc-regime-regular-node/historia-da-reforma-tributaria-do-consumo/">História da Reforma Tributária do Consumo</a>.</p>]]></content><author><name>Carlos Delfino</name></author><summary type="html"><![CDATA[Entenda a incidência do Imposto sobre Bens e Serviços, o destino da operação, a soma das alíquotas, os créditos e a transição de ICMS e ISS.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" /><media:content medium="image" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Imposto Seletivo: como aplicar</title><link href="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/imposto-seletivo-como-aplicar/" rel="alternate" type="text/html" title="Imposto Seletivo: como aplicar" /><published>2026-11-27T08:00:00-03:00</published><updated>2026-11-27T08:00:00-03:00</updated><id>https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/imposto-seletivo-como-aplicar</id><content type="html" xml:base="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/imposto-seletivo-como-aplicar/"><![CDATA[<p>O <strong>Imposto Seletivo (IS)</strong> é um tributo federal voltado a bens e serviços definidos na legislação como prejudiciais à saúde ou ao meio ambiente. Sua finalidade inclui influenciar escolhas de produção e consumo. A incidência não depende de uma avaliação subjetiva do vendedor: é preciso que a operação e o item estejam enquadrados nas hipóteses legais.</p>
+
+<p>Este guia considera as fontes conferidas em <strong>27 de novembro de 2026</strong>, incluindo a <strong>MP 1.399/2026</strong>, que prevê regras para a implantação gradual em 2027. A medida provisória deve ser acompanhada durante sua tramitação; o texto não presume que ela já tenha sido convertida em lei.</p>
+
+<details class="rtc-article-toc">
+  <summary>Neste artigo</summary>
+
+<ul id="markdown-toc">
+  <li><a href="#origem-constitucional-e-legislação" id="markdown-toc-origem-constitucional-e-legislação">Origem constitucional e legislação</a></li>
+  <li><a href="#quais-bens-e-serviços-podem-ser-alcançados" id="markdown-toc-quais-bens-e-serviços-podem-ser-alcançados">Quais bens e serviços podem ser alcançados</a></li>
+  <li><a href="#quem-recolhe-e-em-qual-momento" id="markdown-toc-quem-recolhe-e-em-qual-momento">Quem recolhe e em qual momento</a></li>
+  <li><a href="#como-escolher-a-base-e-o-tipo-de-alíquota" id="markdown-toc-como-escolher-a-base-e-o-tipo-de-alíquota">Como escolher a base e o tipo de alíquota</a>    <ul>
+      <li><a href="#exemplo-com-percentual-sobre-o-valor" id="markdown-toc-exemplo-com-percentual-sobre-o-valor">Exemplo com percentual sobre o valor</a></li>
+      <li><a href="#exemplo-com-valor-por-unidade" id="markdown-toc-exemplo-com-valor-por-unidade">Exemplo com valor por unidade</a></li>
+    </ul>
+  </li>
+  <li><a href="#como-o-is-se-relaciona-com-ibs-e-cbs" id="markdown-toc-como-o-is-se-relaciona-com-ibs-e-cbs">Como o IS se relaciona com IBS e CBS</a></li>
+  <li><a href="#o-calendário-e-a-mp-13992026" id="markdown-toc-o-calendário-e-a-mp-13992026">O calendário e a MP 1.399/2026</a></li>
+  <li><a href="#por-que-o-is-não-é-apenas-um-novo-nome-para-o-ipi" id="markdown-toc-por-que-o-is-não-é-apenas-um-novo-nome-para-o-ipi">Por que o IS não é apenas um novo nome para o IPI</a></li>
+  <li><a href="#aplicação-no-documento-fiscal-e-na-apuração" id="markdown-toc-aplicação-no-documento-fiscal-e-na-apuração">Aplicação no documento fiscal e na apuração</a></li>
+  <li><a href="#relação-com-a-calculadora" id="markdown-toc-relação-com-a-calculadora">Relação com a calculadora</a></li>
+</ul>
+
+</details>
+
+<h2 id="origem-constitucional-e-legislação">Origem constitucional e legislação</h2>
+
+<p>A <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">EC 132/2023</a> incluiu o IS no art. 153, VIII, da Constituição. A <strong>LC 214/2025</strong>, em seu Livro II, instituiu o imposto e disciplinou incidência, contribuintes, bases e outros elementos. A administração e a fiscalização cabem à Receita Federal.</p>
+
+<p>O imposto incide <strong>uma única vez</strong> sobre o bem ou serviço, sem a cadeia de créditos própria do IBS e da CBS. Não se deve destacar um novo débito de IS em toda revenda apenas porque o produto já esteve sujeito a ele na origem. As referências são os arts. 409 a 411 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>.</p>
+
+<h2 id="quais-bens-e-serviços-podem-ser-alcançados">Quais bens e serviços podem ser alcançados</h2>
+
+<p>O art. 409 e o <strong>Anexo XVII</strong> da LC 214 delimitam os grupos e os códigos ou serviços correspondentes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grupo</th>
+      <th>O que conferir para o enquadramento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Veículos</td>
+      <td>Código, características técnicas, critérios ambientais e exceções legais.</td>
+    </tr>
+    <tr>
+      <td>Embarcações e aeronaves</td>
+      <td>Classificação, utilização e tratamentos específicos.</td>
+    </tr>
+    <tr>
+      <td>Produtos fumígenos</td>
+      <td>Código, apresentação e disciplina da categoria.</td>
+    </tr>
+    <tr>
+      <td>Bebidas alcoólicas</td>
+      <td>Classificação, características da bebida e regras próprias.</td>
+    </tr>
+    <tr>
+      <td>Bebidas açucaradas</td>
+      <td>Enquadramento nos códigos e na descrição legal.</td>
+    </tr>
+    <tr>
+      <td>Bens minerais</td>
+      <td>Tipo de bem e disciplina da extração ou importação.</td>
+    </tr>
+    <tr>
+      <td>Concursos de prognósticos e fantasy sport</td>
+      <td>Serviço e base definidos pela legislação.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Estar em um desses setores não significa que toda operação seja tributada da mesma forma. A classificação fiscal, a descrição do item e as exclusões precisam ser verificadas em conjunto. Energia elétrica e telecomunicações têm previsão de não incidência; outras restrições também decorrem da Constituição e da lei. Consulte os arts. 409 e 413 e o Anexo XVII da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="quem-recolhe-e-em-qual-momento">Quem recolhe e em qual momento</h2>
+
+<p>O contribuinte depende do fato gerador. A lei inclui o fabricante nas hipóteses previstas, o importador, o arrematante, o produtor-extrativista e o fornecedor do serviço alcançado. Há também hipóteses de responsabilidade de terceiros.</p>
+
+<p>O momento de incidência pode ser o primeiro fornecimento, a importação, a extração, a arrematação, a incorporação ao ativo do fabricante ou outra situação expressamente prevista. Para determinados serviços, considera-se o fornecimento ou o pagamento, o que ocorrer primeiro. Portanto, “IS sobre a venda” é uma descrição insuficiente para todas as hipóteses. Os dispositivos relevantes são os arts. 412 e 424 a 426 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<h2 id="como-escolher-a-base-e-o-tipo-de-alíquota">Como escolher a base e o tipo de alíquota</h2>
+
+<p>O imposto pode utilizar uma alíquota <strong>ad valorem</strong>, calculada sobre um valor monetário, ou <strong>específica</strong>, expressa por unidade de medida, conforme a categoria e a disciplina legal. Existem regras que combinam componentes e situações com valores de referência.</p>
+
+<p>Na comercialização, a base pode corresponder ao valor da venda com os ajustes legais. Na extração, em produtos fumígenos, em serviços ou em importações, há particularidades. Não é correto usar um único percentual sobre o total da nota para qualquer item sujeito ao imposto. As regras de base e alíquotas estão nos arts. 414 a 423 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214 atualizada</a>.</p>
+
+<h3 id="exemplo-com-percentual-sobre-o-valor">Exemplo com percentual sobre o valor</h3>
+
+<p>Suponha uma operação <strong>hipotética</strong>, efetivamente sujeita ao IS, cuja base legal já tenha sido apurada em <strong>R$ 1.000,00</strong>. Use, apenas para demonstrar a conta, uma alíquota <strong>fictícia de 10%</strong>, sem componente específico ou benefício:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IS = R$ 1.000,00 × 10% = R$ 100,00
+</code></pre></div></div>
+
+<p>O exemplo não atribui 10% a nenhum produto real. O item, sua classificação, a data e a norma de alíquota precisam ser conferidos antes da aplicação concreta.</p>
+
+<h3 id="exemplo-com-valor-por-unidade">Exemplo com valor por unidade</h3>
+
+<p>Se uma hipótese legal utilizasse um valor <strong>fictício de R$ 2,00 por unidade</strong> e a quantidade tributável fosse de <strong>100 unidades</strong>, a mecânica seria:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IS específico = 100 × R$ 2,00 = R$ 200,00
+</code></pre></div></div>
+
+<p>Aqui também não se afirma que exista um produto sujeito a esse valor. A unidade legal pode ser litro, peso ou outra medida; sua definição e eventual combinação com percentual não podem ser inventadas pelo sistema.</p>
+
+<h2 id="como-o-is-se-relaciona-com-ibs-e-cbs">Como o IS se relaciona com IBS e CBS</h2>
+
+<p>O IS não substitui o débito de IBS ou CBS da mesma operação. Quando a legislação determina sua inclusão, ele integra a base desses dois tributos. O IS não deve, porém, ser calculado incluindo o próprio IS em sua base.</p>
+
+<p>Retomando o primeiro exemplo, se R$ 1.000,00 fosse também o valor relevante antes do IS, não houvesse outros ajustes e a regra aplicável determinasse sua inclusão, <strong>R$ 100,00 de IS levariam a uma base de R$ 1.100,00 para IBS e CBS</strong>. Os percentuais desses dois tributos seriam aplicados depois, separadamente. Esse cenário é didático e pressupõe todas as condições mencionadas. A interação das bases decorre do <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm">art. 153, § 6º, da Constituição, na redação da EC 132</a> e dos arts. 12 e 414 a 417 da <a href="https://www2.camara.leg.br/legin/fed/leicom/2025/leicomplementar-214-16-janeiro-2025-796905-normaatualizada-pl.html">LC 214</a>.</p>
+
+<p>O art. 410 veda créditos do próprio IS em operações anteriores ou posteriores. Isso não permite concluir, automaticamente, que uma aquisição sujeita ao IS jamais possa gerar crédito de IBS ou CBS: esses outros créditos dependem das regras próprias de cada tributo.</p>
+
+<h2 id="o-calendário-e-a-mp-13992026">O calendário e a MP 1.399/2026</h2>
+
+<p>O IS não integra o teste de 0,9% de CBS e 0,1% de IBS em 2026. Para sua implantação, é necessário considerar o calendário próprio. A <strong>MP 1.399, de 4 de novembro de 2026</strong>, prevê produção de efeitos a partir de <strong>2 de fevereiro de 2027</strong>, com disciplina de implementação gradual. Consulte o <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm">texto da medida provisória</a>, especialmente seus arts. 1º, 3º, 6º, 15 e 19.</p>
+
+<p>Para veículos, aeronaves, embarcações, produtos fumígenos, bebidas alcoólicas e bebidas açucaradas, a MP utiliza alíquotas iniciais e fatores de conversão, com regras e anexos específicos. Portanto, copiar simplesmente uma alíquota de IPI para um campo de IS pode produzir um resultado incorreto.</p>
+
+<p>O texto estabelece ainda exceções e reduções transitórias, inclusive alíquota zero para bens minerais extraídos até o fim de 2027, nas condições previstas. Determinados veículos e outras categorias também têm tratamento próprio. Esses detalhes não podem ser substituídos por uma regra única para todo o setor. O <a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/novembro/governo-federal-define-aliquotas-do-imposto-seletivo-para-2027-por-meio-de-medida-provisoria">Ministério da Fazenda resume a implantação gradual</a>.</p>
+
+<p>A MP prevê o encaminhamento de projeto de lei para alíquotas a partir de 2028. Isso é uma etapa legislativa futura na data de revisão deste artigo. Antes de aplicar os percentuais em uma operação de 2027 ou de ano posterior, verifique eventual conversão da MP, alterações, regulamentos e a data de produção de efeitos da norma resultante.</p>
+
+<h2 id="por-que-o-is-não-é-apenas-um-novo-nome-para-o-ipi">Por que o IS não é apenas um novo nome para o IPI</h2>
+
+<p>O IPI e o IS têm fundamentos, incidência e transição diferentes. A reforma prevê redução do IPI e preserva tratamento relacionado à Zona Franca de Manaus; o IS, por sua vez, concentra-se nos itens legalmente definidos. Não se deve inferir que todo bem industrializado passa a pagar IS, nem que um item sujeito ao IPI terá automaticamente a mesma carga no novo tributo.</p>
+
+<p>A implantação do IS e a redução do IPI também exigem atenção à compatibilização dos calendários. A <a href="https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/novembro/governo-federal-define-aliquotas-do-imposto-seletivo-para-2027-por-meio-de-medida-provisoria">comunicação do Ministério da Fazenda sobre a MP 1.399</a> informa a previsão de medidas constitucionais para evitar uma descontinuidade. Um anúncio de proposta não equivale à promulgação dessa proposta; a situação normativa deve ser conferida para a data concreta.</p>
+
+<h2 id="aplicação-no-documento-fiscal-e-na-apuração">Aplicação no documento fiscal e na apuração</h2>
+
+<p>Identifique o enquadramento, o responsável, o momento do fato gerador e a unidade ou base legal. Depois, aplique a alíquota da categoria e registre o imposto nos campos previstos para o documento fiscal correspondente. Uma revenda posterior deve respeitar a incidência única, sem criar um novo débito indevido.</p>
+
+<p>Concilie documentos, cancelamentos, devoluções e pagamentos conforme a disciplina própria do IS. A MP 1.399 prevê apuração assistida e formas de extinção do débito; esses mecanismos exigem conferir os atos de implementação. Não se deve presumir o mesmo comportamento de crédito do IVA apenas porque os três tributos aparecem no sistema. Veja os arts. 11 a 14 da <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm">MP 1.399</a>.</p>
+
+<h2 id="relação-com-a-calculadora">Relação com a calculadora</h2>
+
+<p>Antes de conferir o cálculo, reúna a data, a classificação fiscal, a categoria, a quantidade e a unidade de medida, o valor da operação e o eventual valor de referência exigido. Verifique também se a versão do projeto contempla o regime e a norma de alíquota necessários. Uma conta matematicamente correta não corrige um enquadramento tributário equivocado.</p>
+
+<p>Para compreender a origem dessas regras, leia a <a href="/calculadora-rtc-regime-regular-node/historia-da-reforma-tributaria-do-consumo/">história da Reforma Tributária do Consumo</a>. A incidência conjunta com o IVA é explicada nos artigos de <a href="/calculadora-rtc-regime-regular-node/ibs-como-aplicar/">IBS</a> e <a href="/calculadora-rtc-regime-regular-node/cbs-como-aplicar/">CBS</a>.</p>]]></content><author><name>Carlos Delfino</name></author><summary type="html"><![CDATA[Conheça os bens e serviços alcançados pelo IS, a incidência única, as bases de cálculo e a implantação gradual prevista para 2027.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" /><media:content medium="image" url="https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/images/illustrations/rtc-calculo.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

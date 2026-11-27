@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://carlosdelfino.github.io/calculadora-rtc-regime-regular-node/sitemap.xml
