@@ -1,0 +1,42 @@
+name: Duvida
+description: Pergunta sobre uso, configuracao ou comportamento da calculadora
+title: "[Duvida]: "
+labels: ["type: question", "state: to triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de perguntar, consulte o [README.md](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/blob/main/README.md),
+        o [CONTRIBUTING.md](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/blob/main/CONTRIBUTING.md)
+        e as [issues existentes](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/issues?q=is%3Aissue).
+  - type: textarea
+    id: duvida
+    attributes:
+      label: Sua duvida
+      description: Formule a pergunta de forma clara e especifica.
+      placeholder: Como configurar a aliquota de IBS para o ano de transicao?
+    validations:
+      required: true
+  - type: textarea
+    id: tentativas
+    attributes:
+      label: O que voce ja tentou
+      description: Documentacao lida, comandos executados, resultados obtidos.
+      placeholder: Li o README e executei `npm start`, mas...
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente (se aplicavel)
+      description: Versao do Node.js, sistema operacional e versao do projeto.
+      placeholder: Node v20.11.0, Ubuntu 24.04, v0.1.0
+    validations:
+      required: false
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Qualquer informacao que ajude a responder sua duvida.
+    validations:
+      required: false

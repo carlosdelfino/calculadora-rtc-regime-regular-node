@@ -1,0 +1,78 @@
+name: Relatorio de Bug
+description: Reporte um comportamento incorreto, erro ou falha na calculadora
+title: "[Bug]: "
+labels: ["type: bug", "state: to triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar um bug. Antes de continuar, verifique se ja existe
+        uma [issue aberta sobre o assunto](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/issues?q=is%3Aissue).
+        **Nao reporte vulnerabilidades de seguranca por aqui** — contate
+        consultoria@carlosdelfino.eti.br diretamente.
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descricao do bug
+      description: Resumo claro e objetivo do comportamento incorreto.
+      placeholder: O calculo de CBS retorna NaN quando a base de calculo e zero.
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Sequencia minima de passos para reproduzir o problema.
+      placeholder: |
+        1. Executar `npm start`
+        2. Informar base de calculo = 0
+        3. Observar o resultado
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria acontecer.
+      placeholder: O resultado deveria ser 0,00.
+    validations:
+      required: true
+  - type: textarea
+    id: atual
+    attributes:
+      label: Comportamento atual
+      description: O que acontece de fato. Inclua mensagens de erro, codigo de erro e detalhes (sem stack traces sensiveis).
+      placeholder: Retorna NaN na saida.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e evidencias
+      description: Trechos de logs estruturados relevantes (sem segredos, tokens ou dados sensiveis).
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: versao
+    attributes:
+      label: Versao do projeto
+      description: Versao do package.json ou commit utilizado.
+      placeholder: 0.1.0 ou hash do commit
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Versao do Node.js, sistema operacional e demais detalhes relevantes.
+      placeholder: Node v20.11.0, Ubuntu 24.04
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Qualquer outra informacao util (screenshots, configuracoes, workaround).
+    validations:
+      required: false

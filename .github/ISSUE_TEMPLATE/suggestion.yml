@@ -1,0 +1,54 @@
+name: Sugestao
+description: Melhorias de processo, documentacao, arquitetura ou ideias gerais
+title: "[Sugestao]: "
+labels: ["type: suggestion", "state: to triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este template para sugestoes que nao sao bugs nem novos recursos —
+        por exemplo: melhorias de documentacao, arquitetura, testes, CI/CD,
+        convencoes ou processos.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area da sugestao
+      options:
+        - Documentacao
+        - Arquitetura e codigo
+        - Testes e qualidade
+        - CI/CD e automacao
+        - Processo e convencoes
+        - Outra
+    validations:
+      required: true
+  - type: textarea
+    id: sugestao
+    attributes:
+      label: Descricao da sugestao
+      description: O que voce propoe e por que.
+      placeholder: Sugiro adicionar lint de Conventional Commits no CI para...
+    validations:
+      required: true
+  - type: textarea
+    id: beneficios
+    attributes:
+      label: Beneficios esperados
+      description: O que o projeto ganha com a implementacao.
+      placeholder: Garante historico limpo e CHANGELOG automatico confiavel.
+    validations:
+      required: true
+  - type: textarea
+    id: implementacao
+    attributes:
+      label: Como implementar (opcional)
+      description: Ideias de implementacao, ferramentas ou referencias.
+    validations:
+      required: false
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Links, exemplos de outros projetos ou qualquer material de apoio.
+    validations:
+      required: false

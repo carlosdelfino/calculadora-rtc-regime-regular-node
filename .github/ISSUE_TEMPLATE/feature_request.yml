@@ -1,0 +1,61 @@
+name: Novo Recurso
+description: Proponha uma funcionalidade que ainda nao existe na calculadora
+title: "[Feature]: "
+labels: ["type: feature", "state: to triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado pela proposta! Verifique antes se ja existe uma
+        [issue relacionada](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node/issues?q=is%3Aissue)
+        e vote nela em vez de duplicar.
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema relacionado
+      description: Qual problema ou necessidade motiva este recurso?
+      placeholder: Hoje nao e possivel calcular IBS para operacoes mistas...
+    validations:
+      required: true
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solucao proposta
+      description: Descreva o que voce gostaria que fosse implementado.
+      placeholder: Adicionar endpoint/parametro para operacoes mistas...
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Outras abordagens avaliadas e por que foram descartadas.
+    validations:
+      required: false
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceite
+      description: Como saberemos que o recurso esta completo e correto?
+      placeholder: |
+        - [ ] Calculo correto para cenarios X, Y, Z
+        - [ ] Documentacao e testes atualizados
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade sugerida
+      options:
+        - Baixa
+        - Media
+        - Alta
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Referencias legais, exemplos de uso, mockups ou links.
+    validations:
+      required: false
