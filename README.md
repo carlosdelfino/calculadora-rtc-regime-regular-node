@@ -114,7 +114,14 @@ Primeira fatia funcional: bases de cálculo de mercadorias **CBS/IBS** e **IS**,
 portadas de `BaseCalculoService.java`, com validação de vigência, decimais exatos,
 erros seguros, logs e exemplos React/TypeScript.
 
-A apuração final dos tributos, tabelas fiscais, bases unificadas/NFS-e, XML,
+Segundo pacote: `POST /calculadora/base-calculo/base-calculo-unificada` calcula
+as bases RG, IS e SN para NF-e/NFC-e, com seleção por natureza, modelo e vigência.
+O frontend inclui três resultados, avisos de campos ignorados e cenários restauráveis.
+Este endpoint preserva a política Java: admite bases negativas e publica duas casas
+com HALF_EVEN. Componentes nulos valem zero. O catálogo é limitado a 2026–2033;
+fora dele os componentes são ignorados com aviso quando não zero, sem extrapolar regras.
+
+A apuração final dos tributos, tabelas fiscais, base unificada NFS-e, XML,
 pedágio e dados abertos ainda não foram portados. Não use esta versão como
 substituta integral do Java ou para validação fiscal definitiva.
 
