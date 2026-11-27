@@ -4,6 +4,7 @@
 ![Language: Portuguese](https://img.shields.io/badge/Language-Portuguese-brightgreen.svg)
 ![Status](https://img.shields.io/badge/Status-Ongoing-yellow)
 ![Node](https://img.shields.io/badge/Node.js-22-brightgreen)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=RapportTecnologia.calculadora-rtc-regime-regular-node_readme)
 
 # Calculadora RTC — Regime Regular (Node.js)
 
