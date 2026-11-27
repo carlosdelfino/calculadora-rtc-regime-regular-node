@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Language: Portuguese](https://img.shields.io/badge/Language-Portuguese-brightgreen.svg)
 ![Status](https://img.shields.io/badge/Status-Ongoing-yellow)
-![Node](https://img.shields.io/badge/Node.js-%3E%3D18-brightgreen)
+![Node](https://img.shields.io/badge/Node.js-22-brightgreen)
 
 # Calculadora RTC — Regime Regular (Node.js)
 
@@ -78,7 +78,7 @@ Este repositório orquestra os componentes como **submódulos Git**:
 
 ## Requisitos
 
-- Node.js >= 18
+- Node.js 22 (ver `.nvmrc` — com nvm: `nvm use`)
 - Git
 
 ## Uso
