@@ -74,7 +74,7 @@ Este repositório orquestra os componentes como **submódulos Git**:
 | Pasta | Repositório | Componente |
 |---|---|---|
 | `backend/` | [calculadora-rtc-regime-regular-node-backend](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node-backend) | API do cálculo (IBS/CBS, Regime Regular) |
-| `frontend/` | [calculadora-rtc-regime-regular-node-frontend](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node-frontend) | SPA: Vite + TypeScript + React Router + Redux Toolkit + Refine |
+| `frontend/` | [calculadora-rtc-regime-regular-node-frontend](https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node-frontend) | Exemplos em React + TypeScript + Vite; build servido pelo backend |
 
 ## Requisitos
 
@@ -96,8 +96,36 @@ git submodule update --init --recursive
 ```
 
 ```bash
+nvm use
+npm --prefix backend ci
+npm --prefix frontend ci
+npm run build
+npm test
 npm start
 ```
+
+O frontend gerado fica em **`backend/public/`** e é servido pelo backend em
+`http://127.0.0.1:3000`, na mesma origem da API. Não exige servidor frontend
+separado em produção. Para desenvolvimento: `npm --prefix frontend run dev`.
+
+### Estado da conversão
+
+Primeira fatia funcional: bases de cálculo de mercadorias **CBS/IBS** e **IS**,
+portadas de `BaseCalculoService.java`, com validação de vigência, decimais exatos,
+erros seguros, logs e exemplos React/TypeScript.
+
+A apuração final dos tributos, tabelas fiscais, bases unificadas/NFS-e, XML,
+pedágio e dados abertos ainda não foram portados. Não use esta versão como
+substituta integral do Java ou para validação fiscal definitiva.
+
+A API usa contrato Fetch independente do provedor. Existem adaptadores para Node,
+Vercel e Cloudflare Workers; somente Node foi validado como servidor real nesta
+entrega. Os demais têm testes de contrato locais, sem deploy ou configuração
+de conta. Consulte [backend/README.md](backend/README.md),
+[frontend/README.md](frontend/README.md) e [REQUIREMENTS.md](REQUIREMENTS.md).
+
+Documentação local: `/openapi.json`, `/swagger` e `/redoc`.
+Rotas de cálculo públicas, sem autenticação; nenhum dado é persistido.
 
 ## Convenções
 
