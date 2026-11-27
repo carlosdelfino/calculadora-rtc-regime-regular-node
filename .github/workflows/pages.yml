@@ -1,0 +1,43 @@
+name: Publica pagina do projeto (Jekyll -> gh-pages)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: docs
+          bundler-cache: true
+
+      - name: Build com Jekyll
+        working-directory: docs
+        run: bundle exec jekyll build --baseurl "${{ github.event.repository.name }}"
+        env:
+          JEKYLL_ENV: production
+
+      - name: Deploy no branch gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_site
+          publish_branch: gh-pages
+          force_orphan: true
