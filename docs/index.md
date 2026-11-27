@@ -2,7 +2,16 @@
 layout: page
 title: Calculadora RTC — Regime Regular
 description: Calculadora da Reforma Tributária do Consumo para o Regime Regular — port Node.js do projeto Java da Receita Federal.
+image: /images/illustrations/rtc-calculo.jpg
 ---
+
+<figure class="rtc-visual rtc-visual--hero">
+  <picture>
+    <source type="image/webp" srcset="{{ '/images/illustrations/rtc-calculo-768.webp' | relative_url }} 768w, {{ '/images/illustrations/rtc-calculo.webp' | relative_url }} 1536w" sizes="(min-width: 1200px) 730px, (min-width: 768px) 65vw, calc(100vw - 30px)">
+    <img src="{{ '/images/illustrations/rtc-calculo.jpg' | relative_url }}" width="1536" height="1024" alt="Calculadora azul com teclas verdes, documento e blocos representando o cálculo tributário digital." fetchpriority="high" decoding="async">
+  </picture>
+  <figcaption>Tecnologia aberta para o cálculo da Reforma Tributária do Consumo.</figcaption>
+</figure>
 
 ## Sobre o projeto
 
@@ -14,6 +23,13 @@ pela Receita Federal do Brasil e o SERPRO:
 [ReceitaFederal/calculadora-rtc-regime-regular](https://github.com/ReceitaFederal/calculadora-rtc-regime-regular).
 
 ## A Reforma Tributária do Consumo
+
+<figure class="rtc-tax-visual">
+  <picture>
+    <source media="(max-width: 575px)" srcset="{{ '/images/illustrations/tributos-rtc-mobile.svg' | relative_url }}" width="480" height="300">
+    <img src="{{ '/images/illustrations/tributos-rtc.svg' | relative_url }}" width="960" height="240" alt="Três tributos contemplados pela calculadora: IBS, CBS e Imposto Seletivo." loading="lazy" decoding="async">
+  </picture>
+</figure>
 
 Instituída pela **EC 132/2023**, a RTC substitui PIS/Cofins, ICMS e ISS por um
 IVA dual cobrado no destino:
@@ -34,6 +50,14 @@ ampla e uniforme, com direito a crédito pleno e cobrança no destino.
 - [LC 227/2026](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm) — Comitê Gestor do IBS
 
 ## Componentes
+
+<figure class="rtc-visual rtc-visual--components">
+  <picture>
+    <source type="image/webp" srcset="{{ '/images/illustrations/rtc-componentes-768.webp' | relative_url }} 768w, {{ '/images/illustrations/rtc-componentes.webp' | relative_url }} 1536w" sizes="(min-width: 992px) 620px, (min-width: 768px) 65vw, calc(100vw - 30px)">
+    <img src="{{ '/images/illustrations/rtc-componentes.jpg' | relative_url }}" width="1536" height="1024" alt="Interface web conectada a uma calculadora e a módulos de servidor, representando a integração entre frontend e backend." loading="lazy" decoding="async">
+  </picture>
+  <figcaption>Frontend e backend conectados pelo cálculo.</figcaption>
+</figure>
 
 | Componente | Repositório | Stack |
 |---|---|---|

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tributos contemplados pela Calculadora RTC</title>
+  <desc id="desc">IBS, CBS e Imposto Seletivo, apresentados em três cartões.</desc>
+  <path d="M155 121h650" stroke="#d4e4e9" stroke-width="4" stroke-dasharray="8 10"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <rect x="8" y="16" width="288" height="208" rx="24" fill="#edf7f5" stroke="#d3e9e3"/>
+    <circle cx="152" cy="65" r="24" fill="#087f8c"/>
+    <path d="M139 71V59l13-7 13 7v12M143 70V60m9 10V60m9 10V60m-24 15h30" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="152" y="134" font-size="42" font-weight="700" fill="#12304a">IBS</text>
+    <text x="152" y="171" font-size="19" fill="#455b6b">Imposto sobre</text>
+    <text x="152" y="198" font-size="19" fill="#455b6b">Bens e Serviços</text>
+    <rect x="336" y="16" width="288" height="208" rx="24" fill="#eef4fa" stroke="#dbe5ee"/>
+    <circle cx="480" cy="65" r="24" fill="#12304a"/>
+    <path d="m466 60 14-8 14 8m-25 5h22m-20 0v9m9-9v9m9-9v9m-23 4h28" fill="none" stroke="#71d9bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="480" y="134" font-size="42" font-weight="700" fill="#12304a">CBS</text>
+    <text x="480" y="171" font-size="19" fill="#455b6b">Contribuição sobre</text>
+    <text x="480" y="198" font-size="19" fill="#455b6b">Bens e Serviços</text>
+    <rect x="664" y="16" width="288" height="208" rx="24" fill="#fcf7ec" stroke="#eee3c9"/>
+    <circle cx="808" cy="65" r="24" fill="#e9b95c"/>
+    <path d="m796 65 8 8 16-17" fill="none" stroke="#12304a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="808" y="134" font-size="42" font-weight="700" fill="#12304a">IS</text>
+    <text x="808" y="184" font-size="19" fill="#455b6b">Imposto Seletivo</text>
+  </g>
+</svg>

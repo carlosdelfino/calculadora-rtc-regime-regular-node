@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Repositório no GitHub",
+    "link": "https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node",
+    "image": "images/social/github.svg"
+  },
+  {
+    "name": "Email de contato",
+    "link": "mailto:consultoria@carlosdelfino.eti.br",
+    "image": "images/social/email.svg"
+  },
+  {
+    "name": "Rapport Tecnologia",
+    "link": "https://rapport.tec.br",
+    "image": "images/social/website.svg"
+  }
+]

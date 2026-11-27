@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Calculadora RTC</title>
+  <rect width="64" height="64" rx="14" fill="#12304a"/>
+  <rect x="14" y="10" width="36" height="44" rx="6" fill="none" stroke="#71d9bf" stroke-width="4"/>
+  <rect x="21" y="17" width="22" height="9" rx="2" fill="#71d9bf"/>
+  <path d="M23 34h3m12 0h3M23 44h3" stroke="#71d9bf" stroke-width="6" stroke-linecap="round"/>
+  <path d="M37 44h6" stroke="#e9b95c" stroke-width="6" stroke-linecap="round"/>
+</svg>

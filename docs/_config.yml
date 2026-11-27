@@ -8,6 +8,20 @@ author: Carlos Delfino
 url: https://carlosdelfino.github.io
 baseurl: /calculadora-rtc-regime-regular-node
 
+logo:
+  mobile: images/logo/logo-mobile.svg
+  mobile_height: 40px
+  mobile_width: 40px
+  desktop: images/logo/logo.svg
+  desktop_height: 48px
+  desktop_width: 244px
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - ASSETS.md
+
 header_pages:
   - index.md
 

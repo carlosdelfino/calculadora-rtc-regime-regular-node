@@ -5,3 +5,10 @@ main:
   - name: Repositório
     url: https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node
     weight: 2
+footer:
+  - name: Início
+    url: /
+    weight: 1
+  - name: Repositório
+    url: https://github.com/carlosdelfino/calculadora-rtc-regime-regular-node
+    weight: 2
