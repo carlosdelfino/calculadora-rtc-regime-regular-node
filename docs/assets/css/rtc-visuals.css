@@ -258,3 +258,12 @@
 }
 .rtc-cookie-btn--accept { background: var(--rtc-teal, #087f8c); color: #fff; border-color: transparent; }
 .rtc-cookie-btn--reject { background: transparent; color: #fff; }
+
+/* Bloqueia anúncios automáticos do AdSense que sobrepõem o conteúdo
+   (vignette, anchor e demais contêineres injetados pelo Auto Ads). */
+.google-auto-placed,
+ins.adsbygoogle.google-auto-placed,
+body > ins.adsbygoogle[data-ad-status] {
+  display: none !important;
+  visibility: hidden !important;
+}
