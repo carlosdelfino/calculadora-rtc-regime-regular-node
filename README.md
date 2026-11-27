@@ -11,6 +11,12 @@ Calculadora da Reforma Tributária do Consumo (RTC) para o **Regime Regular**,
 implementada em Node.js. Projeto da Rapport Tecnologia para a Receita Federal
 do Brasil.
 
+> **Origem do projeto:** este repositório é um **port para Node.js** do projeto
+> original em Java, mantido em
+> [ReceitaFederal/calculadora-rtc-regime-regular](https://github.com/ReceitaFederal/calculadora-rtc-regime-regular).
+> A lógica de cálculo, regras de negócio e contratos são portados daquele
+> repositório, que permanece a referência de implementação.
+
 ## O que é a Reforma Tributária do Consumo
 
 A Reforma Tributária do Consumo (RTC) é a reforma do Sistema Tributário
@@ -98,5 +104,6 @@ WhatsApp: +55 (85) 98520-5490
 |---|---|---|
 | 2026-11-27 | 0.1.0 | Inicialização do projeto e convenções Git |
 | 2026-11-27 | 0.1.1 | Adicionada seção sobre a Reforma Tributária do Consumo com legislação de referência |
+| 2026-11-27 | 0.1.2 | Documentada origem como port Node.js do projeto Java da Receita Federal |
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&animation=twinkling)
