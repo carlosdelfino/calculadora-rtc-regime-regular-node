@@ -1,0 +1,23 @@
+---
+layout: page
+title: Artigos sobre a Reforma Tributária
+description: Conheça a história da reforma e entenda a aplicação de IBS, CBS e Imposto Seletivo no regime regular, com exemplos e fontes oficiais.
+permalink: /artigos/
+article_index: true
+image: /images/illustrations/rtc-calculo.jpg
+---
+<p>Da tramitação no Congresso à aplicação de cada tributo: uma série para entender a Reforma Tributária do Consumo e sua relação com os cálculos do regime regular.</p>
+<p>Comece pela história da reforma e siga para os guias de IBS, CBS e Imposto Seletivo. Cada artigo informa a data de revisão e apresenta links para a legislação e as fontes oficiais.</p>
+<div class="rtc-article-list">
+  {% assign articles = site.posts | sort: 'series_order' %}
+  {% for article in articles %}
+  <article class="rtc-article-card">
+    <p class="rtc-eyebrow">{{ article.topic | escape }}</p>
+    <h2><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></h2>
+    <p>{{ article.description | escape }}</p>
+    <p class="rtc-article-meta">Revisado em {{ article.last_modified_at | default: article.date | date: '%d/%m/%Y' }}</p>
+    <a class="rtc-read-article" href="{{ article.url | relative_url }}">Ler artigo<span class="rtc-visually-hidden">: {{ article.title | escape }}</span></a>
+  </article>
+  {% endfor %}
+</div>
+<p><a href="{{ '/feed.xml' | relative_url }}">Acompanhar os artigos por RSS/Atom</a></p>

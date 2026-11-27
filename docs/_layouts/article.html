@@ -1,0 +1,35 @@
+---
+layout: default
+bodyClass: page-article
+---
+<main id="conteudo" class="container pb-6 pt-6 pt-md-8 pb-md-10">
+  <div class="row">
+    <article class="col-12 col-lg-9 rtc-article">
+      <nav class="rtc-breadcrumbs" aria-label="Navegação estrutural">
+        <a href="{{ '/' | relative_url }}">Início</a>
+        <span aria-hidden="true">/</span>
+        <a href="{{ '/artigos/' | relative_url }}">Artigos</a>
+      </nav>
+      <header class="rtc-article-header">
+        <p class="rtc-eyebrow">{{ page.topic | escape }}</p>
+        <h1 class="title">{{ page.title | escape }}</h1>
+        <p class="rtc-article-lead">{{ page.description | escape }}</p>
+        <p class="rtc-article-meta">Por {{ page.author | default: site.author | escape }} · Publicado em <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time></p>
+        <p class="rtc-article-meta">Legislação e fontes conferidas em <time datetime="{{ page.last_modified_at | default: page.date | date: '%Y-%m-%d' }}">{{ page.last_modified_at | default: page.date | date: '%d/%m/%Y' }}</time>.</p>
+      </header>
+      <div class="content rtc-article-content">{{ content }}</div>
+      <aside class="rtc-related" aria-labelledby="continue-lendo">
+        <h2 id="continue-lendo">Continue lendo</h2>
+        <ul>
+          {% assign articles = site.posts | sort: 'series_order' %}
+          {% for article in articles %}
+            {% unless article.url == page.url %}
+            <li><a href="{{ article.url | relative_url }}">{{ article.title | escape }}</a></li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+        <a href="{{ '/artigos/' | relative_url }}">Ver todos os artigos</a>
+      </aside>
+    </article>
+  </div>
+</main>

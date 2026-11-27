@@ -38,16 +38,23 @@ IVA dual cobrado no destino:
 |---|---|
 | PIS / Cofins | **CBS** — União (Receita Federal) |
 | ICMS + ISS | **IBS** — Estados, DF e Municípios (via CGIBS) |
-| IPI (zerado em 2027) | **Imposto Seletivo** — bens prejudiciais |
+
+A reforma também institui o **Imposto Seletivo**, com incidência própria sobre bens e serviços definidos em lei como prejudiciais à saúde ou ao meio ambiente. O IPI tem tratamento específico na transição, inclusive quanto à Zona Franca de Manaus; os dois impostos não são equivalentes. Veja o [guia do Imposto Seletivo]({{ '/imposto-seletivo-como-aplicar/' | relative_url }}).
 
 O **Regime Regular** é a regra geral de incidência: tributação não cumulativa,
-ampla e uniforme, com direito a crédito pleno e cobrança no destino.
+ampla, com apropriação de créditos nas condições legais e cobrança no destino.
 
 ### Legislação
 
 - [EC 132/2023](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm) — reforma constitucional
 - [LC 214/2025](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm) — institui IBS, CBS e IS
 - [LC 227/2026](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm) — Comitê Gestor do IBS
+
+### Entenda a reforma
+
+Leia a [história da Reforma Tributária do Consumo]({{ '/historia-da-reforma-tributaria-do-consumo/' | relative_url }}) e os guias de aplicação do [IBS]({{ '/ibs-como-aplicar/' | relative_url }}), da [CBS]({{ '/cbs-como-aplicar/' | relative_url }}) e do [Imposto Seletivo]({{ '/imposto-seletivo-como-aplicar/' | relative_url }}).
+
+[Ver todos os artigos]({{ '/artigos/' | relative_url }})
 
 ## Componentes
 
