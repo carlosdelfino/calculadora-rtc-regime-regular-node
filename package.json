@@ -1,0 +1,22 @@
+{
+  "name": "calculadora-rtc-regime-regular-node",
+  "version": "0.1.0",
+  "description": "Calculadora RTC (Reforma Tributária do Consumo) — Regime Regular, implementada em Node.js.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "rtc",
+    "reforma-tributaria",
+    "receita-federal",
+    "calculadora",
+    "regime-regular"
+  ],
+  "author": "Carlos Delfino <consultoria@carlosdelfino.eti.br>",
+  "license": "CC-BY-SA-4.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
